@@ -23,6 +23,8 @@ class TestAccountInvoiceInterCompany(SavepointCase):
         cls.invoice_obj = cls.env['account.invoice']
         cls.invoice_company_a = cls.env.ref(
             'account_invoice_inter_company.customer_invoice_company_a')
+        cls.invoice_company_a_same_company = cls.env.ref(
+            'account_invoice_inter_company.customer_invoice_company_a2')
         cls.user_company_a = cls.env.ref(
             'account_invoice_inter_company.user_company_a')
         cls.user_company_b = cls.env.ref(
@@ -94,3 +96,12 @@ class TestAccountInvoiceInterCompany(SavepointCase):
         self.assertEquals(self.invoice_company_a.state, 'cancel')
         self.assertEquals(invoices[0].state, 'cancel')
         self.assertEquals(invoices[0].origin, origin)
+
+    def test05_confirm_invoice_same_company(self):
+        # Confirm the invoice of company A same company
+        self.invoice_company_a_same_company.sudo(
+            self.user_company_a.id).action_invoice_open()
+        invoices = self.invoice_obj.sudo(self.user_company_a.id).search([
+            ('auto_invoice_id', '=', self.invoice_company_a_same_company.id)
+        ])
+        self.assertFalse(invoices)
