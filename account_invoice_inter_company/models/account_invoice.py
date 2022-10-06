@@ -34,7 +34,11 @@ class AccountInvoice(models.Model):
             # do not consider invoices that have already been auto-generated,
             # nor the invoices that were already validated in the past
             dest_company = src_invoice._find_company_from_invoice_partner()
-            if not dest_company or src_invoice.auto_generated:
+            if (
+                not dest_company
+                or src_invoice.auto_generated
+                or dest_company == src_invoice.company_id
+            ):
                 continue
             src_invoice.sudo().with_context(force_company=dest_company.id).\
                 _inter_company_create_invoice(dest_company)
