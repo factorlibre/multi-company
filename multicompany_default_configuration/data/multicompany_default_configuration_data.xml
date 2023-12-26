@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo noupdate="1">
+    <!-- System Parameter for Default Company Setting -->
+    <record id="param_partner_default_company_enable" model="ir.config_parameter">
+        <field
+            name="key"
+        >multicompany_default_configuration.partner_default_company_enable</field>
+        <field name="value">1</field> <!-- Enable by default -->
+    </record>
+</odoo>

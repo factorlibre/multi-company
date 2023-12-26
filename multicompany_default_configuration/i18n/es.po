@@ -1,0 +1,58 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* multicompany_default_configuration
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-12-26 10:09+0000\n"
+"PO-Revision-Date: 2023-12-26 10:09+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: multicompany_default_configuration
+#: model_terms:ir.ui.view,arch_db:multicompany_default_configuration.res_config_settings_view_form_inherit
+msgid ""
+"<span class=\"o_form_label\">Multi-Company</span>\n"
+"                    <br/>"
+msgstr ""
+"<span class=\"o_form_label\">Multi-Compañía</span>\n"
+"                    <br/>"
+
+#. module: multicompany_default_configuration
+#: model_terms:ir.ui.view,arch_db:multicompany_default_configuration.res_config_settings_view_form_inherit
+msgid ""
+"Check the options to true if you want products and/or companies\n"
+"                        to be shared between all companies. This setting will work from\n"
+"                        now on, it is recommended to review the \"company\" in existing\n"
+"                        products and companies after changing the values."
+msgstr ""
+"Marque a verdadero las opciones si desea que los productos y/o empresas\n"
+"                        se compartan entre todas las compañías. Esta configuración funcionará de ahora\n"
+"                        en adelante, se recomienda revisar la \"compañía\" en productos y empresas existentes\n"
+"                        después de cambiar los valores."
+
+#. module: multicompany_default_configuration
+#: model:ir.model,name:multicompany_default_configuration.model_res_config_settings
+msgid "Config Settings"
+msgstr "Opciones de configuración"
+
+#. module: multicompany_default_configuration
+#: model:ir.model,name:multicompany_default_configuration.model_res_partner
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: multicompany_default_configuration
+#: model:ir.model.fields,field_description:multicompany_default_configuration.field_res_config_settings__share_companies
+msgid "Share Companies"
+msgstr "Compartir empresas"
+
+#. module: multicompany_default_configuration
+#: model:ir.model.fields,field_description:multicompany_default_configuration.field_res_config_settings__share_products
+msgid "Share Products"
+msgstr "Compartir catálogo de productos"
