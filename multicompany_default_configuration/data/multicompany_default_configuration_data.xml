@@ -5,6 +5,6 @@
         <field
             name="key"
         >multicompany_default_configuration.partner_default_company_enable</field>
-        <field name="value">1</field> <!-- Enable by default -->
+        <field name="value">1</field> <!-- Disabled by default -->
     </record>
 </odoo>
