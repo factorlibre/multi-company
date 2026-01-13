@@ -198,7 +198,11 @@ class AccountInvoice(models.Model):
             company = invoice._find_company_from_invoice_partner()
             if company and not invoice.auto_generated:
                 for inter_invoice in self.sudo().search(
-                        [('auto_invoice_id', '=', invoice.id)]):
+                    [
+                        ('auto_invoice_id', '=', invoice.id),
+                        ('state', 'in', ['draft', 'open']),
+                    ]
+                ):
                     inter_invoice.action_invoice_cancel()
                     inter_invoice.write({
                         'origin': _('%s - Canceled Invoice: %s') % (
