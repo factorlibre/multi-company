@@ -10,11 +10,12 @@ from odoo import fields, models
 class PosCategory(models.Model):
     _inherit = "pos.category"
 
-    company_id = fields.Many2one(
+    company_ids = fields.Many2many(
         comodel_name="res.company",
-        string="Company",
-        default=lambda self: self._default_company_id(),
+        string="Companies",
+        relation="pos_category_company_rel",
+        default=lambda self: self._default_company_ids(),
     )
 
-    def _default_company_id(self):
+    def _default_company_ids(self):
         return self.env.company

@@ -10,12 +10,7 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="model">pos.category</field>
         <field name="arch" type="xml">
             <search>
-                <field name="company_id" groups="base.group_multi_company" />
-                <filter
-                    name="filter_company_id"
-                    string="Company"
-                    context="{'group_by' : 'company_id'}"
-                />
+                <field name="company_ids" groups="base.group_multi_company" />
             </search>
         </field>
     </record>
@@ -25,7 +20,11 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="inherit_id" ref="point_of_sale.product_pos_category_tree_view" />
         <field name="arch" type="xml">
             <field name="display_name" position="after">
-                <field name="company_id" groups="base.group_multi_company" />
+                <field
+                    name="company_ids"
+                    groups="base.group_multi_company"
+                    widget="many2many_tags"
+                />
             </field>
         </field>
     </record>
@@ -35,7 +34,11 @@ License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
         <field name="inherit_id" ref="point_of_sale.product_pos_category_form_view" />
         <field name="arch" type="xml">
             <field name="parent_id" position="after">
-                <field name="company_id" groups="base.group_multi_company" />
+                <field
+                    name="company_ids"
+                    groups="base.group_multi_company"
+                    widget="many2many_tags"
+                />
             </field>
         </field>
     </record>

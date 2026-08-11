@@ -17,10 +17,10 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: pos_category_multicompany
-#: model:ir.model.fields,field_description:pos_category_multicompany.field_pos_category__company_id
+#: model:ir.model.fields,field_description:pos_category_multicompany.field_pos_category__company_ids
 #: model_terms:ir.ui.view,arch_db:pos_category_multicompany.view_pos_category_search
-msgid "Company"
-msgstr "Société"
+msgid "Companies"
+msgstr "Sociétés"
 
 #. module: pos_category_multicompany
 #: model:ir.model,name:pos_category_multicompany.model_pos_category
